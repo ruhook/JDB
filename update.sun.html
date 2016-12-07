@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>家夺宝-晒单</title>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/reset.css" />
+		<link href="{G_TEMPLATES_UPDATE}/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/sun.css" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/swiper.min.css" />
+		<script src="{G_TEMPLATES_UPDATE}/js/resizeRem.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.min.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.pullToRefresh.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.pullToRefresh.material.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/zepto.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mustache.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/swiper.jquery.min.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/index.png"/></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="shoplist.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/shop.png"/></span>
+				<span class="mui-tab-label">全部奖品</span>
+			</a>
+			<a class="mui-tab-item" href="newaa.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/new.png"/></span>
+				<span class="mui-tab-label">最新揭晓</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="sun.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/sun-active.png"/></span>
+				<span class="mui-tab-label">晒单</span>
+			</a>
+			<a class="mui-tab-item" href="center.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/center.png"/></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile" data-id="0">
+							最新晒单
+						</a>
+						<a class="mui-control-item" href="#item2mobile" data-id="1">
+							人气晒单
+						</a>
+						<a class="mui-control-item" href="#item3mobile" data-id="2">
+							评论最多
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view ">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view ">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view ">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script id="scroll-wrapper1" type="text/html">
+			{{#prop}}
+			<li class="mui-table-view-cell">
+				<a href="">
+					<div class="tit">
+						<div class="tit-img">
+							<img src="{G_UPLOAD_PATH}/{{pic}}" />
+						</div>
+						<div class="tit-name">
+							<span>
+								<font color="#007AFF">{{user}}:</font>{{sd_title}}
+							</span>
+							<span>
+								{{time}}
+							</span>
+						</div>
+						<div class="tit-pic">
+							<img src="{G_TEMPLATES_UPDATE}/image/sun-vip.jpg" />
+						</div>
+					</div>
+					<p class="li-text">
+						{{sd_content}}
+					</p>
+					<!--<div class="swiper-container">
+						<div class="swiper-wrapper">
+							{{#sd_photolist}}
+							<div class="swiper-slide">
+								<img src="{G_UPLOAD_PATH}/{{.}}" />
+							</div>
+							{{/sd_photolist}}
+						</div>
+						<!-- Add Pagination -->
+						<!--<div class="swiper-pagination" style="display: none;"></div>
+					</div>-->
+					<div class="li-img">
+						{{#sd_photolist}}
+						<span>
+							<img src="{G_UPLOAD_PATH}/{{.}}"/>
+						</span>
+						{{/sd_photolist}}
+					</div>
+					<div class="li-down">
+						<div class="down-zan">
+							<span class="mui-icon mui-icon-star"></span>2人羡慕嫉妒恨
+						</div>
+						<div class="down-lun">
+							<span class="mui-icon mui-icon-chatbubble"></span>0条评论
+						</div>
+					</div>
+				</a>
+			</li>
+			{{/prop}}
+		</script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										window.location.href = 'sun.html';
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.innerHTML = createFragment(ul, index, 2);
+										self.endPullUpToRefresh();
+										mui(".mui-progressbar").each(function() {
+											mui(this).progressbar({
+												progress: this.getAttribute("data-progress")
+											}).show();
+										});
+									}, 1000);
+								}
+							}
+						});
+					});
+					var createFragment = function(ul, index, count, reverse) {
+						switch(index){
+							case 0 :
+							var _index = 'new';
+							break;
+							
+							case 1 :
+							var _index = 'renqi';
+							break;
+							
+							case 2 :
+							var _index = 'pinglun';
+							break;
+						};
+						per += 5;
+						mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shaidanajax', {
+							dataType: 'json', //服务器返回json格式数据
+							type: 'post', //HTTP请求类型
+							async: false,
+							data: {
+								limitstart: 0,
+								limitper: per,
+								content: _index
+							},
+							success: function(data) {
+								console.log(data);
+								console.log(per);
+								var loop = document.getElementById('scroll-wrapper1').innerHTML;
+								var obj = {
+									prop: data.data
+								};
+								Mustache.parse(loop);
+								htmlAfterRendered = Mustache.render(loop, obj);
+							},
+							error: function(xhr, type, errorThrown) {
+								//异常处理；
+								console.log(type);
+							}
+						});
+						return htmlAfterRendered;
+					};
+				});
+			})(mui);
+
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+			mui('#sliderSegmentedControl').on('tap', 'a', function() {
+				var dataId = this.getAttribute('data-id');
+				var a = document.getElementsByClassName('mui-table-view');
+				a[dataId].style.webkitTransform = 'translate3d(0px, 0px, 0px)';
+				readyAjax(dataId);
+			});
+			var readyAjax = function(_index) {
+				per = 5;
+				if (_index=='new') {
+					var dataId = '0';
+				} else if (_index=='renqi') {
+					var dataId = '1';
+				} else if (_index=='pinglun') {
+					var dataId = '2';
+				};
+				var a = $('.mui-table-view');
+				mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shaidanajax', {
+					dataType: 'json', //服务器返回json格式数据
+					type: 'post', //HTTP请求类型
+					async: false,
+					data: {
+						limitstart: 0,
+						limitper: per,
+						content: _index
+					},
+					success: function(data) {
+						console.log(data);
+						var loop = document.getElementById('scroll-wrapper1').innerHTML;
+						var obj = {
+							prop: data.data
+						};
+						Mustache.parse(loop);
+						var htmlAfterRendered = Mustache.render(loop, obj);
+						a[dataId].innerHTML = htmlAfterRendered;
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						console.log(type);
+					}
+				});
+			};
+			for( var i=0; i<3; i++ ) {  
+				
+			   (function(arg){
+				   	if (arg=='0') {
+						var _index = 'new';
+					} else if (arg=='1') {
+						var _index = 'renqi';
+					} else if (arg=='2') {
+						var _index = 'pinglun';
+					};
+			       readyAjax(_index);   
+			   })(i);//调用时参数
+			};
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+		</script>
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				slidesPerView: 3,
+				paginationClickable: true,
+				spaceBetween: 30,
+				freeMode: true
+			});
+		</script>
+	</body>
+
+</html>

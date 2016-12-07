@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>家夺宝-首页</title>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/reset.css" />
+		<link href="{G_TEMPLATES_UPDATE}/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/main.css" />
+		<script src="{G_TEMPLATES_UPDATE}/js/resizeRem.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mustache.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/zepto.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/swiper.jquery.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/main.js"></script>
+		<script>
+			function fn() {
+				var timestamp0 = Math.round(new Date().getTime() / 1000) + 100 + Math.random() * 100;
+				var timestamp1 = Math.round(new Date().getTime() / 1000) + 150 + Math.random() * 100;
+				var timestamp2 = Math.round(new Date().getTime() / 1000) + 200 + Math.random() * 100;
+				addTimer("timer0", timestamp0);
+				addTimer("timer1", timestamp1);
+				addTimer("timer2", timestamp2);
+			};
+		</script>
+		<style>
+			.up-to-li-div {
+				font-size: 0.55rem;
+				text-align: center;
+				margin: 0.2rem 0 0.2rem 0;
+				color: #9B9B9B;
+			}
+			
+			.up-to .up-to-ul>li {
+				height: 6.3rem;
+				border-bottom: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--导航开始-->
+		<!--<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="index.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/index-active.png"/></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="shoplist.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/shop.png"/></span>
+				<span class="mui-tab-label">全部奖品</span>
+			</a>
+			<a class="mui-tab-item" href="newaa.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/new.png"/></span>
+				<span class="mui-tab-label">最新揭晓</span>
+			</a>
+			<a class="mui-tab-item" href="sun.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/sun.png"/></span>
+				<span class="mui-tab-label">晒单</span>
+			</a>
+			<a class="mui-tab-item" href="center.html">
+				<span class="mui-icon"><img src="{G_TEMPLATES_UPDATE}/icon/center.png"/></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>-->
+		<div class="footerdi" style="bottom: 0px;">
+			<ul>
+		      <li class="f_home">
+		        <a title="首页" href="{WEB_PATH}/mobile/mobile/"><i class="{wc:$f_home}">&nbsp;</i>首页</a>
+		      </li>
+		      <li class="f_whole">
+		        <a title="全部奖品" href="{WEB_PATH}/mobile/mobile/glist"><i class="{wc:$f_whole}">&nbsp;</i>全部奖品</a>
+		      </li>
+		      <li class="f_jiexiao">
+		        <a title="最新揭晓" href="{WEB_PATH}/mobile/mobile/lottery"><i class="{wc:$f_jiexiao}">&nbsp;</i>最新揭晓</a>
+		      </li>
+		      <li class="f_car">
+		        <a title="首页" href="{WEB_PATH}/mobile/shaidan"><i class="{wc:$f_car}">&nbsp;</i>晒单</a>
+		      </li>
+		      <li class="f_personal">
+		        <a title="首页" href="{WEB_PATH}/mobile/home"><i class="{wc:$f_personal}">&nbsp;</i>个人中心</a>
+		      <li>
+		    </ul>
+		</div>
+		<!--导航结束-->
+		<!--轮播开始-->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination">
+
+			</div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next" style="display: none;"></div>
+			<div class="swiper-button-prev" style="display: none;"></div>
+		</div>
+		<script id="slider-loop" type="text/html">
+			{{#prop}}
+			<div class="swiper-slide">
+				<a href="{{link}}">
+					<img src="{G_UPLOAD_PATH}/{{{img}}}" />
+				</a>
+			</div>
+			{{/prop}}
+		</script>
+		<script>
+			mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/ajaxcarousel', {
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				async: false,
+				success: function(data) {
+					var str = "";
+					var loop = document.getElementById('slider-loop').innerHTML;
+					var obj = {
+						prop: data.data
+					};
+					Mustache.parse(loop);
+					var htmlAfterRendered = Mustache.render(loop, obj);
+					$('.swiper-wrapper').append(htmlAfterRendered);
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			});
+		</script>
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				slidesPerView: 1,
+				paginationClickable: true,
+				spaceBetween: 30,
+				loop: true,
+				centeredSlides: true,
+				autoplay: 4000,
+				autoplayDisableOnInteraction: false
+			});
+		</script>
+		<!--轮播结束-->
+		<!--提示中奖开始-->
+		<div class="tit">
+			<div class="tit-text">
+			</div>
+		</div>
+		<script id="tit-text" type="text/html">
+			<ul>
+				{{#prop}}
+				<li>恭喜
+					<font color="#7AC9F2">{{name}}</font>获得
+					<font color="#000000">{{title}}</font>
+				</li>
+				{{/prop}}
+			</ul>
+		</script>
+		<script>
+			mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/ajaxrotate', {
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				success: function(data) {
+					var str = "";
+					var loop = document.getElementById('tit-text').innerHTML;
+					var obj = {
+						prop: data.data
+					};
+					Mustache.parse(loop);
+					var htmlAfterRendered = Mustache.render(loop, obj);
+					$('.tit-text').append(htmlAfterRendered);
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			});
+		</script>
+		</div>
+		<!--提示中奖结束-->
+		<!--即将揭晓开始-->
+		<div class="up-to">
+			<div class="up-to-h2">
+				<span>即将揭晓</span>
+				<a href="#">更多<span class="mui-icon mui-icon-arrowright"></span></a>
+			</div>
+			<div class="up-to-ul mui-row">
+				<!--<li class="mui-col-xs-4">
+					<img src="{G_TEMPLATES_UPDATE}/image/pci.jpg" />
+					<div class="up-to-li-div">
+						倒计时<span id="timer1"></span>
+					</div>
+
+				</li>
+				<li class="mui-col-xs-4">
+					<img src="{G_TEMPLATES_UPDATE}/image/pci.jpg" />
+					<div class="up-to-li-div">
+						倒计时<span id="timer2"></span>
+					</div>
+				</li>
+				<li class="mui-col-xs-4">
+					<img src="{G_TEMPLATES_UPDATE}/image/pci.jpg" />
+					<div class="up-to-li-div">
+						倒计时<span id="timer3"></span>
+					</div>
+				</li>-->
+			</div>
+		</div>
+		<script id="up-to-h2" type="text/html">
+			{{#prop}}
+			<li class="mui-col-xs-4">
+				<img src="{G_UPLOAD_PATH}/{{thumb}}" />
+				<div class="up-to-li-div">
+					<span id="timer{{num}}"></span>
+				</div>
+			</li>
+			{{/prop}}
+		</script>
+		<script>
+			mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/ajaxrevealed', {
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				async: false,
+				success: function(data) {
+					console.log(data);
+					var str = "";
+					var loop = document.getElementById('up-to-h2').innerHTML;
+					var obj = {
+						prop: data.data
+					};
+					Mustache.parse(loop);
+					var htmlAfterRendered = Mustache.render(loop, obj);
+					$('.up-to-ul').append(htmlAfterRendered);
+					fn();
+
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			});
+		</script>
+		<!--即将揭晓结束-->
+		<!--商品展示开始-->
+		<div class="mui-content">
+			<div style="border-left: none ; border-right: none; background-color: #efeff4; border-bottom: 2px solid #E6282A;">
+				<div style="width: 100%;">
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a class="mui-control-item mui-active" href="#item1">
+							普通会员
+						</a>
+						<a class="mui-control-item" href="#item2">
+							高级会员<span>(5折)</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+				</div>
+				<script id="shop" type="text/html">
+					<ul class="mui-row">
+						{{#prop}}
+						<li class="mui-table-view-cell mui-col-xs-12 ">
+							<a href="{WEB_PATH}/mobile/mobile/item/{{id}}">
+								<div class="li-img">
+									<img src="{G_UPLOAD_PATH}/{{thumb}}" />
+								</div>
+								<div class="li-div">
+									<p class="li-p">{{title}}</p>
+									<span class="li-div-price">
+										<div class="price-new">价值:￥{{money}}</div> 
+										<div class="price-old">
+											高级会员:￥{{vmoney}}
+										</div>
+									</span>
+									<p class="mui-progressbar" data-progress="{{jindu}}"><span></span></p>
+									<div class="li-renshu">
+										<span>已参与<font color="#565656">{{canyurenshu}}</font></span>
+										<span>总需人数<font color="#565656">{{zongrenshu}}</font></span>
+									</div>
+									<span class="span-a">
+											
+									</span>
+								</div>
+							</a>
+						</li>
+						{{/prop}}
+					</ul>
+				</script>
+				<script>
+					mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shoplistrenqiajax', {
+						dataType: 'json', //服务器返回json格式数据
+						type: 'post', //HTTP请求类型
+						//						data:{
+						//							limitstart:0,
+						//							limitper:5
+						//						},
+						success: function(data) {
+							console.log(data)
+							var str = "";
+							var loop = document.getElementById('shop').innerHTML;
+							var obj = {
+								prop: data.data
+							};
+							Mustache.parse(loop);
+							var htmlAfterRendered = Mustache.render(loop, obj);
+							$('#item1').append(htmlAfterRendered);
+							mui(".mui-progressbar").each(function() {
+								mui(this).progressbar({
+									progress: this.getAttribute("data-progress")
+								}).show();
+							});
+						},
+						error: function(xhr, type, errorThrown) {
+							//异常处理；
+							console.log(type);
+						}
+					});
+				</script>
+				<div id="item2" class="mui-control-content">
+				</div>
+				<script id="shop-vip" type="text/html">
+					<ul class="mui-row">
+						{{#prop}}
+						<li class="mui-table-view-cell mui-col-xs-12 ">
+							<a href="{WEB_PATH}/mobile/mobile/item/{{id}}">
+								<div class="li-img">
+									<img src="{G_UPLOAD_PATH}/{{thumb}}" />
+								</div>
+								<div class="li-div">
+									<p class="li-p">{{title}}</p>
+									<span class="li-div-price">
+										<div class="price-new">价值:￥{{money}}</div>
+									</span>
+									<p class="mui-progressbar" data-progress="{{jindu}}"><span></span></p>
+									<div class="li-renshu">
+										<span>已参与<font color="#565656">{{canyurenshu}}</font></span>
+										<span>总需人数<font color="#565656">{{zongrenshu}}</font></span>
+
+									</div>
+									<span class="span-a">
+											
+									</span>
+								</div>
+							</a>
+						</li>
+						{{/prop}}
+					</ul>
+				</script>
+				<script>
+					mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shoplistrenqihuangajax', {
+						dataType: 'json', //服务器返回json格式数据
+						type: 'post', //HTTP请求类型
+						//						data:{
+						//							limitstart:0,
+						//							limitper:5
+						//						},
+						success: function(data) {
+							console.log(data)
+							var str = "";
+							var loop = document.getElementById('shop-vip').innerHTML;
+							var obj = {
+								prop: data.data
+							};
+							Mustache.parse(loop);
+							var htmlAfterRendered = Mustache.render(loop, obj);
+							$('#item2').append(htmlAfterRendered);
+							mui(".mui-progressbar").each(function() {
+								mui(this).progressbar({
+									progress: this.getAttribute("data-progress")
+								}).show();
+							});
+						},
+						error: function(xhr, type, errorThrown) {
+							//异常处理；
+							console.log(type);
+						}
+					});
+				</script>
+			</div>
+		</div>
+		<!--商品展示结束-->
+		<!--点击查看更多开始-->
+		<a href="shoplist.html">
+			<button type="button" class="mui-btn mui-btn-block mui-btn-outlined">点击查看更多</button>
+		</a>
+
+		<!--点击查看更多结束-->
+		<!--购物车开始-->
+		<div class="shop-car">
+			<span class="mui-badge mui-badge-danger">5</span>
+		</div>
+		<!--购物车结束-->
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 2000
+			});
+			mui(".mui-progressbar").each(function() {
+				mui(this).progressbar({
+					progress: this.getAttribute("data-progress")
+				}).show();
+			});
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+			//购物车
+			mui('.mui-content').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+		</script>
+	</body>
+
+</html>

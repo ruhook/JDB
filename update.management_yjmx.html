@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>佣金明细</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			#ul .mui-input-row:after {
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    left: 15px;
+			    height: 1px;
+			    content: '';
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			    background-color: #c8c7cc;
+			}
+			.mui-row:after, .mui-row:before {
+			    display: block;
+			}
+			.mui-input-row { padding-left: 0.5rem;}
+			.mui-input-row>span { padding: 0.3rem 0; font-size: 0.5rem;text-align: center;}
+			.tit { background: #FFFFFF; padding-left: 0.5rem;}
+			.tit>span { padding: 0.3rem 0; font-size: 0.55rem;text-align: center; color: #777777;}
+			
+			.detail { margin: 0.5rem 0; padding: 0.5rem 0.5rem; background: #FFFFFF;}
+			.detail>span {font-size: 0.5rem;}
+			.detail>span:nth-child(2n) { text-align: right;}
+			.detail-btn { width: 100%; margin-top: 2rem;}
+			.detail-btn a { padding: 0.1rem 0; text-align: center; width: 45%; float: left; color:#FF5152; border: 1px silver solid;}
+			.detail-btn a:last-child { float: right; color: #FFFFFF; background: #FF5152; border: none;}
+			.detail>p {font-size: 0.5rem; margin-top: 0.2rem; margin-bottom: 0; }
+		</style>
+	</head>
+
+	<body>
+		<div class="detail mui-row">
+			<span class="mui-col-xs-6">
+				累计收入:<font color="#FF5152">￥35</font>
+			</span>
+			<span class="mui-col-xs-6">
+				累计提现:<font color="#FF5152">￥35</font>
+			</span>
+			<span class="mui-col-xs-6">
+				佣金余额:<font color="#FF5152">￥35</font>
+			</span>
+			<span class="mui-col-xs-6">
+				累计充值:<font color="#FF5152">￥35</font>
+			</span>
+			<div class="detail-btn">
+				<a href="yjmx-sqtx.html">
+					申请提现
+				</a>
+				<a href="yjmx-cz.html">
+					充值到账户
+				</a>
+			</div>
+			<div style=" clear: both;">
+				
+			</div>
+			<p>
+				佣金余额可实时充值到您的51家夺宝账户中，满100元时才可申请提现
+			</p>
+		</div>
+		<div class="mui-row tit">
+			<span class="mui-col-xs-3">用户</span>
+			<span class="mui-col-xs-3">时间</span>
+			<span class="mui-col-xs-2">描述</span>
+			<span class="mui-col-xs-2">金额</span>
+			<span class="mui-col-xs-2">佣金</span>
+		</div>
+		<ul class="mui-table-view mui-table-view-chevron" id="ul">
+			<div class="mui-row mui-input-row">
+				<span class="mui-col-xs-3">西西</span>
+				<span class="mui-col-xs-3">12:34:54</span>
+				<span class="mui-col-xs-2">无</span>
+				<span class="mui-col-xs-2">10元</span>
+				<span class="mui-col-xs-2">1元</span>
+			</div>
+			<div class="mui-row mui-input-row">
+				<span class="mui-col-xs-3">西西</span>
+				<span class="mui-col-xs-3">12:34:54</span>
+				<span class="mui-col-xs-2">无</span>
+				<span class="mui-col-xs-2">10元</span>
+				<span class="mui-col-xs-2">1元</span>
+			</div>
+			<div class="mui-row mui-input-row">
+				<span class="mui-col-xs-3">西西</span>
+				<span class="mui-col-xs-3">12:34:54</span>
+				<span class="mui-col-xs-2">无</span>
+				<span class="mui-col-xs-2">10元</span>
+				<span class="mui-col-xs-2">1元</span>
+			</div>
+		</ul>
+		<script src="js/mui.min.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>充值到账户</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			.tit {
+				background: #FFFAEC;
+				margin: 0.5rem 0.5rem;
+				padding: 0 0.5rem;
+				border: 1px solid #DCDCDC;
+			}
+			
+			.tit>p {
+				font-size: 0.5rem;
+			}
+			
+			.h5 {
+				padding: 0 0.5rem;
+				font-size: 0.55rem;
+			}
+			
+			.mui-input-group {
+				background: #EFEFF4;
+			}
+			
+			.mui-input-group:before {
+				height: 0px;
+			}
+			
+			.mui-input-group:after {
+				height: 0px;
+			}
+			
+			.mui-input-row {
+				font-size: 0.55rem;
+			}
+			
+			.mui-input-row label {
+				text-align: right;
+			}
+			
+			.btn {
+				width: 95%;
+				padding: 0.3rem 0;
+				margin: 0 auto;
+				border: none;
+				background: #FF5152;
+				font-size: 0.7rem;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="tit">
+			<p class="mui-row">
+				<span class="mui-col-xs-6">
+					佣金总余额:<font color="#FF5152">0元</font>
+				</span>
+				<span class="mui-col-xs-6">
+					活动佣金:<font color="#FF5152">0元</font>
+				</span>
+			</p>
+			<p>
+				正在佣金提现审核(冻结):
+				<font color="#FF5152">10元</font>
+			</p>
+		</div>
+		<div class="h5">
+			当前可充值余额:0元
+		</div>
+		<form class="mui-input-group">
+			<div style="height: 0.5rem; background: #EFEFF4;"></div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<div class="mui-input-row">
+					<label>申请充值金额(元)</label>
+					<input type="text" class="mui-input-clear">
+				</div>
+			</ul>
+			<div style="height: 0.5rem; background: #EFEFF4;"></div>
+			<div class="mui-button-row">
+				<button type="button" class="btn" onclick="return false;">充值</button>
+			</div>
+		</form>
+		<script src="js/mui.min.js"></script>
+	</body>
+
+</html>

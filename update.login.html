@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>登陆</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			.mui-input-group {background-color: #EFEFF4;}
+			.mui-input-group .mui-input-row {height: 2.0rem;}
+			.mui-input-row>label { width: 15%;}
+			.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {width: 85%;}
+			.mui-input-clear { margin-top: 0.25rem;}
+			.wjmm {text-align: right; display: block; background: #EFEFF4; font-size: 0.47rem; padding-right: 0.5rem;}
+			.mui-div {background: #EFEFF4; padding:0 0.5rem ; height: 1.7rem; padding-bottom: 4.0rem;}
+			.mui-div>a { height: 1.7rem; width: 45%; background: #52A3FF; line-height: 1.7rem; color: #FFFFFF; text-align: center; float: left; font-size: 0.8rem;}
+			.mui-div>a:last-child { float: right; background: #FF5152;}
+			.mui-input-group:after {height: 0px;}
+			/*一键登录*/
+			.fastLogin h2 {text-align: center;font-size: 14px;color: #666;line-height: 20px;font-weight: normal;}
+			.fastInfo {text-align: center;}
+			.fastLogin h2 span {width: 35%;height: 1px;background-color: #DBDBDB;vertical-align: middle;display: inline-block;margin-top: 10px;float: left;}
+			.fastLogin h2 span:last-child { float: right;}
+			.fastInfo a {display: inline-block;text-align: center;width: 32%;height: 40px;}
+			.fastInfo .user_login_q {display: block;height: 40px;width: 40px;background: url(../../images/mobile/qq.png) 0px 0px no-repeat;float: left;margin-left: 10%;border-radius: 20px;background: #FFFFFF;}
+			.fastInfo .user_login_w {display: block;height: 40px; width: 40px;background: url(../../images/mobile/wx.png) 0px 0px no-repeat;float: right;margin-right: 10%;border-radius: 20px;background: #FFFFFF;}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div style="height: 0.5rem; background: #EFEFF4;"></div>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<div class="mui-input-row">
+						<label><span class="mui-icon mui-icon-person"></span></label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的手机号">
+					</div>
+					<div class="mui-input-row">
+						<label><span class="mui-icon mui-icon-locked"></span></label>
+						<input type="text" class="mui-input-clear" placeholder="请输入密码">
+					</div>
+				</ul>
+				<div style="height: 0.5rem; background: #EFEFF4;"></div>
+				<a href="password-zh.html" class="wjmm">忘记密码?</a>
+				<div style="height: 0.5rem; background: #EFEFF4;"></div>
+				<div class="mui-div">
+					<a href="#">
+						登陆
+					</a>
+					<a href="reg.html">
+						注册
+					</a>
+				</div>
+			</form>
+			<div class="fastLogin">
+              	<h2>        
+                    <span class="line_l"></span> 一键登录<span class="line_r"></span>
+                </h2>     
+                <div class="fastInfo">
+                    <a href="#">
+                    	<div class="user_login_q"></div>                             
+                    </a>
+                   	<a href="#">
+                        <div class="user_login_w"></div>                                
+                    </a>
+                </div>
+              </div>
+		</div>
+		
+		
+		<script src="js/mui.min.js"></script>
+	</body>
+</html>

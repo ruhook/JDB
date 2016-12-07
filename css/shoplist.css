@@ -1,0 +1,187 @@
+html,
+body {
+	background-color: #FFFFFF;
+}
+
+.mui-content .mui-fullscreen {
+	top: 1.6rem;
+	height: auto;
+}
+
+.mui-pull-top-tips {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -25px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	z-index: 1;
+}
+
+.mui-bar~.mui-pull-top-tips {
+	top: 24px;
+}
+
+.mui-pull-top-wrapper {
+	width: 42px;
+	height: 42px;
+	display: block;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: 1px solid #ddd;
+	border-radius: 25px;
+	background-clip: padding-box;
+	box-shadow: 0 4px 10px #bbb;
+	overflow: hidden;
+}
+
+.mui-pull-top-tips.mui-transitioning {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+
+.mui-pull-top-tips .mui-pull-loading {
+	/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+	margin: 0;
+}
+
+.mui-pull-top-wrapper .mui-icon,
+.mui-pull-top-wrapper .mui-spinner {
+	margin-top: 7px;
+}
+
+.mui-pull-top-wrapper .mui-icon.mui-reverse {
+	/*-webkit-transform: rotate(180deg) translateZ(0);*/
+}
+
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+}
+
+.mui-pull-top-canvas {
+	overflow: hidden;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	box-shadow: 0 4px 10px #bbb;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.mui-pull-top-canvas canvas {
+	width: 40px;
+}
+
+.mui-slider-indicator.mui-segmented-control {
+	background-color: #FFFFFF;
+	border: 1px solid #E5E5E5;
+	border-left: none;
+	border-right: none;
+}
+
+.mui-segmented-control.mui-scroll-wrapper .mui-control-item {
+	display: inline-block;
+	width: auto;
+	padding: 0 0.5rem;
+	border: 0;
+	border-right: 1px solid #E0E0E0;
+	float: left;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+	/* border-top: 1px solid #c8c7cc; */
+	/* border-bottom: 1px solid #c8c7cc; */
+	border: none;
+}
+
+.mui-segmented-control.mui-scroll-wrapper {
+	height: 1.5rem;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 1.5rem;
+}
+
+.mui-table-view-cell {
+	position: relative;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+}
+
+.mui-table-view-cell:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #FF5353;
+	background: 0 0;
+}
+
+.r-h2 {
+	height: 1.6rem;
+	line-height: 1.7rem;
+	background: #FFFFFF;
+}
+
+.ordi {
+	width: 3.8rem;
+	display: inline-block;
+	border-bottom: 2px solid #FF5353;
+	color: #FF5353;
+	height: 1.6rem;
+	text-align: center;
+}
+
+.vip {
+	width: 3.8rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.mui-a {
+	display: inline-block;
+	float: right;
+	margin-top: -1.0rem;
+	color: #ACACAC;
+	padding-right: 1.0rem;
+}
+
+.mui-progressbar {
+	height: 0.18rem;
+	width: 77%;
+	border-radius: 5px;
+	margin-top: 0.2rem;
+	margin-bottom: 0;
+}
+
+.mui-progressbar>span {
+	background: #FF5152;
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+    width: auto;
+    height: 40px;
+    white-space: nowrap;
+    font-size: 0.55rem;
+}
+.mui-fullscreen .mui-segmented-control~.mui-slider-group {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}

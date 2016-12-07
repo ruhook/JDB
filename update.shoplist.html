@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>家夺宝-全部奖品</title>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/reset.css" />
+		<link href="{G_TEMPLATES_UPDATE}/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/shoplist.css" />
+		<script src="{G_TEMPLATES_UPDATE}/js/resizeRem.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.min.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.pullToRefresh.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.pullToRefresh.material.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mustache.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/zepto.min.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<!--导航开始-->
+		<style>
+		   .footerdi li.f_home i {
+			    width: 27px;
+			    height: 25px;
+			    background-position: 0 -26px;
+			}
+			.footerdi li.f_whole i {
+			    width: 25px;
+			    height: 25px;
+			    background-position: 0 -52px;
+			    position: relative;
+			    top: 1px;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item {
+			    font-size: 14px;
+			    position: relative;
+			    display: inline-block;
+			    width: 100%;
+			    height: 91%;
+			    vertical-align: top;
+			    white-space: normal;
+			}
+		</style>   
+		   <div class="footerdi" style="bottom: 0px;">
+		    <ul>
+		      <li class="f_home">
+		        <a title="首页" href="{WEB_PATH}/mobile/mobile/"><i class="{wc:$f_home}">&nbsp;</i>首页</a>
+		      </li>
+		      <li class="f_whole">
+		        <a title="全部奖品" href="{WEB_PATH}/mobile/mobile/glist"><i class="{wc:$f_whole}">&nbsp;</i>全部奖品</a>
+		      </li>
+		      <li class="f_jiexiao">
+		        <a title="最新揭晓" href="{WEB_PATH}/mobile/mobile/lottery"><i class="{wc:$f_jiexiao}">&nbsp;</i>最新揭晓</a>
+		      </li>
+		      <li class="f_car">
+		        <a title="首页" href="{WEB_PATH}/mobile/shaidan"><i class="{wc:$f_car}">&nbsp;</i>晒单</a>
+		      </li>
+		      <li class="f_personal">
+		        <a title="首页" href="{WEB_PATH}/mobile/home"><i class="{wc:$f_personal}">&nbsp;</i>个人中心</a>
+		      <li>
+		    </ul>
+		   </div>
+		<!--导航结束-->
+		<div class="mui-content">
+			<div class="r-h2">
+				<div class="ordi">普通会员</div>
+				<div class="vip">高级会员</div>
+			</div>
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile" data-id="0">
+							即将揭晓
+						</a>
+						<a class="mui-control-item" href="#item2mobile" data-id="1">
+							人气
+						</a>
+						<a class="mui-control-item" href="#item3mobile" data-id="2">
+							最新
+						</a>
+						<a class="mui-control-item" href="#item4mobile" data-id="3">
+							价格<img src="{G_TEMPLATES_UPDATE}/image/1.png" style="width: 25%; display: inline-block; float: right; margin-top: 0.53rem;" />
+						</a>
+						<a class="mui-control-item" href="#item5mobile" style="border: none;" data-id="4">
+							商品分类
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll mi-scroll">
+								<ul class="mui-table-view">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content" data-id="1">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll mi-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll mi-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll mi-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll mi-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script id="scroll-wrapper1" type="text/html">
+			{{#prop}}
+			<li class="mui-table-view-cell">
+				<a href="{WEB_PATH}/mobile/mobile/item/{{id}}">
+					<div class="li-img">
+						<img src="{G_UPLOAD_PATH}/{{thumb}}" />
+					</div>
+					<div class="li-div">
+						<p class="li-p">{{title}}</p>
+						<span class="li-div-price">
+							<div class="price-new">价值:￥{{money}}</div> 
+							<div class="price-old">
+								高级会员:￥{{vmoney}}
+							</div>
+						</span>
+						<p class="mui-progressbar" data-progress="{{jindu}}"><span></span></p>
+						<div class="li-renshu">
+							<span>已参与<font color="#565656">{{canyurenshu}}</font></span>
+							<span>总需人数<font color="#565656">{{zongrenshu}}</font></span>
+							<span>剩余<font color="#FD514F5">{{shenyurenshu}}</font></span>
+						</div>
+						<span class="span-a">
+											
+						</span>
+					</div>
+				</a>
+			</li>
+			{{/prop}}
+		</script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										window.location.href = 'shoplist.html';
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.innerHTML = createFragment(ul, index, 2);
+										self.endPullUpToRefresh();
+										mui(".mui-progressbar").each(function() {
+											mui(this).progressbar({
+												progress: this.getAttribute("data-progress")
+											}).show();
+										});
+									}, 1000);
+								}
+							}
+						});
+					});
+					var createFragment = function(ul, index, count, reverse) {
+						per+=5;
+						mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/allgoods', {
+							dataType: 'json', //服务器返回json格式数据
+							type: 'post', //HTTP请求类型
+							async: false,
+							data: {
+								limitstart: 0,
+								limitper: per,
+								content: index
+							},
+							success: function(data) {
+								console.log(data);
+								console.log(per);
+								var loop = document.getElementById('scroll-wrapper1').innerHTML;
+								var obj = {
+									prop: data.data
+								};
+								Mustache.parse(loop);
+								htmlAfterRendered = Mustache.render(loop, obj);
+								mui(".mui-progressbar").each(function() {
+									mui(this).progressbar({
+										progress: this.getAttribute("data-progress")
+									}).show();
+								});
+							},
+							error: function(xhr, type, errorThrown) {
+								//异常处理；
+								console.log(type);
+							}
+						});
+						return htmlAfterRendered;
+					};
+				});
+			})(mui);
+
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+			mui('#sliderSegmentedControl').on('tap', 'a', function() {
+				var dataId = this.getAttribute('data-id');
+				var a = document.getElementsByClassName('mi-scroll');
+				a[dataId].style.webkitTransform = 'translate3d(0px, 0px, 0px)';
+				readyAjax(dataId);
+			});
+			var readyAjax = function(dataId) {
+				per = 5;
+				var a = document.getElementsByClassName('mui-table-view');
+				mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/allgoods', {
+					dataType: 'json', //服务器返回json格式数据
+					type: 'post', //HTTP请求类型
+					async: false,
+					data: {
+						limitstart: 0,
+						limitper: 5,
+						content: dataId
+					},
+					success: function(data) {
+						console.log(data);
+						var loop = document.getElementById('scroll-wrapper1').innerHTML;
+						var obj = {
+							prop: data.data
+						};
+						Mustache.parse(loop);
+						var htmlAfterRendered = Mustache.render(loop, obj);
+						a[dataId].innerHTML = htmlAfterRendered;
+						mui(".mui-progressbar").each(function() {
+							mui(this).progressbar({
+								progress: this.getAttribute("data-progress")
+							}).show();
+						});
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						console.log(type);
+					}
+				});
+			};
+			for( var i=0; i<5; i++ ) {     
+			   (function(arg){         
+			       readyAjax(arg);    
+			   })(i);//调用时参数
+			};
+		</script>
+		<script>
+			mui(".mui-progressbar").each(function() {
+				mui(this).progressbar({
+					progress: this.getAttribute("data-progress")
+				}).show();
+			});
+			mui('.mui-table-view').on('tap', 'a', function(e) {
+				window.location.href = this.href;
+			});
+		</script>
+	</body>
+
+</html>

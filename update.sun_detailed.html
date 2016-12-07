@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>晒单详细</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script src="js/resizeRem.js"></script>
+		<script src="js/zepto.min.js" type="text/javascript"></script>
+		<script src="js/swiper.jquery.min.js" type="text/javascript"></script>
+		<style>
+			body{
+				background-color: #FFFFFF;
+				padding-bottom: 50px;
+			}
+			
+			.top-div {
+				width: 100%;
+				padding: 0.5rem 15%;
+				border-bottom: 1px solid #BBBBBB;
+				height: auto;
+				height: 5.0rem;
+			}
+			
+			.pic {
+				width: 25%;
+				float: left;
+				position: relative;
+				height: 4.0rem;
+			}
+			
+			.text {
+				width: 73%;
+				float: right;
+				line-height: 0.9rem;
+			}
+			
+			.text>p {
+				margin: 0;
+				font-size: 0.5rem;
+			}
+			
+			.content {
+				padding: 0.5rem 0.5rem;
+			}
+			
+			.mui-row {
+				text-align: center;
+				font-size: 0.47rem;
+			}
+			.mui-row>li>a:active { background: #CCCCCC;}
+			.mui-row .mui-col-sm-4 {
+				background: #FF5152;
+			}
+			
+			.mui-row .mui-col-sm-4 a {
+				color: #FFFFFF;
+			}
+			
+			.mui-row .mui-col-sm-3 a {
+				border: 1px solid #C7C7CC;
+				color: #FF5152;
+			}
+			
+			.mui-table-view-cell {
+				padding: 6px 0;
+			}
+			
+			.mui-icon {
+				font-size: 0.8rem;
+				background: none;
+			}
+			
+			.mui-table-view-cell:after {
+				height: 0px;
+			}
+			
+			.row-a {
+				text-align: center;
+				line-height: 1.0rem;
+			}
+			
+			.row-a>a {
+				width: 45%;
+				float: left;
+				border: 1px solid #C7C7CC;
+				color: #FF5152;
+				background: none;
+				height: 1.0rem;
+				font-size: 0.47rem;
+			}
+			
+			.row-a>a:last-child {
+				float: right;
+				background: #FF5152;
+				color: #FFFFFF;
+				border: none;
+			}
+			.mui-table-view h5 { padding-left: 1.0rem;}
+			.mui-table-view li { padding: 10px 8px; border-bottom: 1px solid #CCCCCC;}
+			.mui-table-view>li:nth-child(2) { border-top:1px solid #CCCCCC ;}
+			.mui-table-view>li:last-child { border-bottom: none;}
+			.mui-table-view li p { margin:  0;}
+		</style>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon"><img src="icon/index.png"/></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="shoplist.html">
+				<span class="mui-icon"><img src="icon/shop.png"/></span>
+				<span class="mui-tab-label">全部奖品</span>
+			</a>
+			<a class="mui-tab-item" href="newaa.html">
+				<span class="mui-icon"><img src="icon/new.png"/></span>
+				<span class="mui-tab-label">最新揭晓</span>
+			</a>
+			<a class="mui-tab-item" href="sun.html">
+				<span class="mui-icon"><img src="icon/sun.png"/></span>
+				<span class="mui-tab-label">晒单</span>
+			</a>
+			<a class="mui-tab-item" href="center.html">
+				<span class="mui-icon"><img src="icon/center.png"/></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+		<div class="top-div">
+			<div class="pic">
+				<img src="image/sun-name.jpg" />
+			</div>
+			<div class="text">
+				<p>幸运获得者:
+					<font color="#007AFF">肩上哭泣</font>
+				</p>
+				<p>幸运码:
+					<font color="#FF5152">10086987</font>
+				</p>
+				<p>本期购买:
+					<font color="#FF5152">5</font>人次</p>
+				<p>揭晓时间:2016-06-30 19:50:06</p>
+			</div>
+		</div>
+		<div class="content">
+			<h4>终于收到话费了</h4>
+			<p>2016-08-28 -09:23</p>
+			<p>撒大师傅撒法但是公审大会高富帅的好就不烦你的发梵蒂冈梵蒂冈梵蒂冈</p>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="image/li-img.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="image/li-img.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="image/li-img.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="image/li-img.jpg" />
+					</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination" style="display: none;"></div>
+			</div>
+			<ul class="mui-row">
+				<li class="mui-col-sm-4">
+					<a><span class="mui-icon mui-icon-star"></span>2人羡慕嫉妒</a>
+				</li>
+				<li class="mui-col-sm-1"></li>
+				<li class="mui-col-sm-3">
+					<a><span class="mui-icon mui-icon-chatbubble"></span>我要评论</a>
+				</li>
+				<li class="mui-col-sm-1"></li>
+				<li class="mui-col-sm-3">
+					<a><span class="mui-icon mui-icon-redo"></span>分享</a>
+				</li>
+			</ul>
+			<div class="mui-input-row" style="margin: 10px 0;">
+				<textarea id="textarea" rows="3" placeholder=""></textarea>
+				<div class="row-a">
+					<a>取消</a>
+					<a>发表评论</a>
+				</div>
+			</div>
+			<ul class="mui-table-view" style="border: 1px solid #C7C7CC; border-radius: 5px;">
+				<h5>共3条评论</h5>
+				<li class="mui-media">
+					<div class="mui-pull-left" style="margin-right: 0.5rem;">
+						<img src="image/li-img.jpg" class="mui-media-object" style="display: block;">
+					</div>
+
+					<div class="mui-media-body">
+						<p>bite论</p>
+						<p>2016-040-08 9:26</p>
+						<p>萨法沙发合适的接口规范接口速度和高科技</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				slidesPerView: 3,
+				paginationClickable: true,
+				spaceBetween: 30,
+				freeMode: true
+			});
+		</script>
+	</body>
+
+</html>

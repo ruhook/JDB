@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>帮助中心</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			* { background: #FFFFFF;}
+			.mui-segmented-control { position: fixed;top: 0; height: 1.7rem; z-index: 9;}
+			.mui-segmented-control {
+			    font-size: 0.7rem;
+			    border: none; 
+			    border-radius: 0;
+				background-color: #FFFFFF;
+				
+			}
+			.mui-segmented-control .mui-control-item {
+			    line-height: 1.7rem;
+			    -webkit-transition: background-color .1s linear;
+			    transition: background-color .1s linear;
+			    text-align: center;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    color: #545454;
+			    border-color: #007aff;
+			    border-left: none;
+			    border-bottom:1px solid #F6F6F6 ;
+			}
+			.mui-segmented-control .mui-control-item.mui-active {
+			    color: #FF5152;
+			    border-bottom: 2px solid #FF5152;
+			    background-color: #FFFFFF;
+			}
+			#item2>span { font-size: 0.55rem; color: #FF5152; display: block;margin-top: 0.2rem;}
+			#item2>p { font-size: 0.5rem;}
+			#item3>span { font-size: 0.55rem; color: #FF5152; display: block;margin-top: 0.2rem;}
+			#item3>p { font-size: 0.5rem;}
+		</style>
+	</head>
+	<body>
+		
+		<div class="mui-content">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						夺宝攻略
+					</a>
+					<a class="mui-control-item" href="#item2">
+						常见问题
+					</a>
+					<a class="mui-control-item" href="#item3">
+						了解家夺宝
+					</a>
+				</div>
+			<div style="padding-top: 1.7rem; background: #FFFFFF;">
+				<div id="item1" class="mui-control-content mui-active">
+					<img src="image/help.jpg" />
+				</div>
+				<div id="item2" class="mui-control-content">	
+					<span>1、怎样查看我参与的商品有没有中奖？</span>
+					<p>每件商品开奖结果公布之后，登录网站，进入"我的用户中心"，在"我中奖的商品"中即可查询中奖情况。</p>
+					<span>2、我获得了商品，我还需要支付其他费用吗？</span>
+					<p>网站内正常商品都不需要另外支付其他费用，活动商品不属于51家夺宝包邮范围内</p>
+					<span>3、当我获得商品以后我该做什么？</span>
+					<p>在您获得商品后您会收到短信的通知。在这之后，您必须在“我的收货地址”正确填写、真实的收货地址，完善或确认您的个人信息。我们会在您获得商品后3个工作日内通过电话方式与您取得联系。</p>
+					<span>4、商品是正品吗？怎么保证？</span>
+					<p>我们承诺，所有商品100%正品，可享受厂家所提供的全国联保服务，享受商品的保修、换货和退货的义务（国家三包政策）。</p>
+					<span>5、如何晒单分享？</span>
+					<p>在您收到商品后，登录网站，进入"个人中心"，在“我的晒单”区发布晒单信息，通过审核后，您还可获得一定的红包奖励。在您成功晒单后，您的晒单会出现在网站“晒单”分享区，与大家分享喜悦。</p>
+					<span>6、我收到的商品可以换货或者退货吗？</span>
+					<p>非质量问题，不在三包范围内，不给予退换货。</p>
+					<span>7、参与家夺宝需要注意什么？</span>
+					<p>请务必正确填写真实有效的联系电话、收货地址以便在您中奖时能及时与您取得联系。如您对我们“帮助中心”的说明有任何疑问或建议请告诉我们</p>	
+				</div>
+				<div id="item3" class="mui-control-content">
+					<span>51家夺宝游戏规则</span>
+					<p>1获得夺宝币：用户充值1元，即可获得1个夺宝币；<br />
+					2挑选喜欢的商品：商品分配对应数量的号码，1个夺宝币，可以获得其中1个号码（系统随机分配）；<br />
+					3获得商品：当所有号码都被分配完毕后，系统根据规则计算出1个幸运号码，持有该号码的用户，直接获得该商品。</p>
+					<span>幸运号码计算规则</span>
+					<p>1商品的最后一个号码分配完毕后，将公示该分配时间点前本站全部商品的最后100个参与时间；<br />
+					2将这100个时间的数值进行求和（得出数值A）（每个时间按时、分、秒、毫秒的顺序组合，如20:15:25.362则为201525362）；<br />
+					3为保证公平公正公开，系统还会等待一小段时间，取最近100条时间记录之和除以本商品总需参与人数；<br />
+					4（数值A+数值B）除以该商品总需人次得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该商品。</p>
+					<span>晒单规则</span>
+					<p>如果您中奖了，可以通过晒单和网友们分享获奖的喜悦，帮助大家更充分的了解家夺宝平台的乐趣，而且，晒单成功，会返2-5元红包！晒单的时候，我们提醒您注意以下几点：<br />
+					1详细的内容，是晒单的精华，因此，建议您的晒单不少于50字，并且配上3张以上不同的照片（跪求高清无码）；<br />
+					2真实，是晒单的灵魂，因此，您可以将快递单号也晒上来哦~（快递单上的个人隐私部分，建议您马赛克处理下）；<br />
+					3一般大家都喜欢沾喜气，因此，您能够出镜和商品合个影儿什么的，给大家一起膜拜就再好不过了！<br />
+					4晒单的质量越高越好玩，红包的价值就越高哦！<br />
+					5如果同一类商品多次获奖，请勿简单的复制粘贴之前的晒单内容。<br />
+					晒单小窍门：如果您邀请了一人以上参加活动，会获得额外的现金奖励！</p>
+				</div>
+			</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+</html>

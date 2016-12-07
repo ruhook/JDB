@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>家夺宝-商品详情</title>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/reset.css" />
+		<link href="{G_TEMPLATES_UPDATE}/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/shop-details.css" />
+		<script src="{G_TEMPLATES_UPDATE}/js/resizeRem.js"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mustache.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/zepto.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/swiper.jquery.min.js" type="text/javascript"></script>
+		<style>
+			.new-car {
+				color: #FFFFFF;
+				width: 80%;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script id="main" type="text/html">
+			{{#prop}}
+			<!--轮播开始-->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					{{#picarr}}
+					<div class="swiper-slide">
+							<img src="{G_UPLOAD_PATH}/{{.}}" />
+					</div>
+					{{/picarr}}
+				</div>
+				<!-- Add Pagination -->
+				<!--<div class="swiper-pagination">
+
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next" style="display: none;"></div>
+				<div class="swiper-button-prev" style="display: none;"></div>
+			</div>
+			<!--轮播结束-->
+			<!--商品信息开始-->
+			<div class="shop-name">
+				<h5>{{title}}</h5>
+				<div class="name-tit">
+					<span>
+					第{{qishu}}期
+				</span>
+					<span>
+					<font color="#AAAAAA">价值 : </font>￥{{money}}
+				</span>
+				</div>
+				<p class="mui-progressbar mui-progressbar-success" data-progress="20"><span></span></p>
+				<div class="name-num mui-row">
+					<div class="mui-col-xs-4">
+						<font color="#AAAAAA">已参与</font>{{canyurenshu}}
+					</div>
+					<div class="mui-col-xs-4">
+						<font color="#AAAAAA">总需人数</font>{{zongrenshu}}
+					</div>
+					<div class="mui-col-xs-4">
+						<font color="#AAAAAA">剩余</font>
+						<font color="#FF5152">{{shenyurenshu}}</font>
+					</div>
+				</div>
+			</div>
+			<!--商品信息结束-->
+			<!--图文详情开始-->
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a href="imgtext.html?={{id}}" class="mui-navigate-right">图文详情
+						<i class="mui-pull-right update">
+					建议WIFI下使用
+				</i></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="shop_sun.html?={{id}}" class="mui-navigate-right">已有
+						<font color="#FF5152">{{sdtotal}}</font>个幸运者晒单，
+						<font color="#FF5152">{{sdhftotal}}</font>条评论!</a>
+				</li>
+			</ul>
+			<!--图文详情结束-->
+			<!--夺宝记录开始-->
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a href="all_record.html?={{id}}" class="mui-navigate-right">所有夺宝记录</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="newbb.html?={{id}}" class="mui-navigate-right">往期揭晓</a>
+				</li>
+			</ul>
+			<!--夺宝记录结束-->
+			<div class="open-bottom">
+				<a href="cartlist.html?={{id}}" class="new-car">
+					立即夺宝
+				</a>
+				
+				<a class="car">
+
+				</a>
+			</div>
+			{{/prop}}
+		</script>
+		<script>
+			var _href = window.location.href;
+			var aR = _href.split('?=');
+			var sId = parseInt(aR[1]);
+			mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shopdetailajax', {
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				async: false,
+				data:{
+					id:sId
+				},
+				success: function(data) {
+					console.log(data)
+					var loop = document.getElementById('main').innerHTML;
+					var obj = {
+						prop: data.data
+					};
+					Mustache.parse(loop);
+					var htmlAfterRendered = Mustache.render(loop, obj);
+					$('body').prepend(htmlAfterRendered);
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			});
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				slidesPerView: 1,
+				paginationClickable: true,
+				spaceBetween: 30,
+				loop: true,
+				centeredSlides: true,
+				autoplay: 4000,
+				autoplayDisableOnInteraction: false
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 2000
+			});
+			mui(".mui-progressbar").each(function() {
+				mui(this).progressbar({
+					progress: this.getAttribute("data-progress")
+				}).show();
+			});
+			mui('.open-bottom').on('tap', '.new-car', function(e) {
+				mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/addshopcartajax', {
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				async: false,
+				data:{
+					shopid:sId
+				},
+				success: function(data) {
+					window.location.href = 'cartlist.html';
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			});
+			});
+		</script>
+	</body>
+
+</html>

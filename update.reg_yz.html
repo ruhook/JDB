@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>注册-验证</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			.mui-input-group {background-color: #EFEFF4;}
+			.mui-input-group .mui-input-row {height: 2.0rem;}
+			.mui-input-row>label { width: 15%;}
+			.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {width: 85%;}
+			.mui-input-clear { margin-top: 0.25rem;}
+			.yz-text { padding: 0.5rem 0.5rem;}
+			.yz-text>p { font-size: 0.55rem;}
+			.mui-input-group>a { width: 90%; display: block; height: 1.8rem; background:#FF5152 ; margin:  0 auto; text-align: center; line-height: 1.8rem; color: #FFFFFF; font-size: 0.8rem;}
+			.mui-input-group>a:last-child { margin-top: 0.5rem; background: #D4D4D4;}
+			.mui-input-group:after {height: 0px;}
+
+		</style>
+	</head>
+	<body>
+		<form class="mui-input-group">
+				<div style="height: 0.5rem; background: #EFEFF4;"></div>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<div class="mui-input-row">
+						<label><span class="mui-icon mui-icon-paperclip"></span></label>
+						<input type="text" class="mui-input-clear" placeholder="请输入您的手机验证码">
+					</div>
+				</ul>
+				<div class="yz-text">
+					<p>如未收到验证短信，请在120秒后点击重新发送。</p>
+				</div>
+				<a href="#" class="next">
+					下一步
+				</a>
+				<a href="#" class="resend">
+					重新发送
+				</a>
+			</form>
+		
+		<script src="js/mui.min.js"></script>
+	</body>
+</html>

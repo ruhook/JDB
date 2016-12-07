@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_UPDATE}/css/mui.min.css" />
+		<script src="{G_TEMPLATES_UPDATE}/js/mustache.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/zepto.min.js" type="text/javascript"></script>
+		<script src="{G_TEMPLATES_UPDATE}/js/resizeRem.js"></script>
+		<style>
+			body { padding-bottom:3.3rem ; background: #FFFFFF;}
+			li {padding: 10px 8px;border-bottom: 1px solid #CCCCCC;}
+			.mui-table-view .mui-media-object {max-width: 3rem;height: 3rem;}
+			.mui-row div {float: left;font-size: 0.47rem;}
+			h5 {color: #333333;font-size: 0.6rem;}
+			.num {}
+			.num>button {width: 1.2rem;height: 1.2rem;float: left;text-align: center;line-height: 1.2rem;padding: 0;font-size: 0.8rem;border-radius: 0;}
+			.num>button:first-child {border-right: none;}
+			.num>button:nth-child(3) {border-left: none;}
+			.num>button:last-child {float: right;border: none;}
+			.num>input {width: 1.8rem;height: 1.2rem;float: left;border-radius: 0;padding: 0;text-align: center;line-height: 1.3rem;}
+			.bttom { position: fixed;bottom: 0; text-align: center; width: 100%;}
+			.bttom>div { height: 1.5rem; line-height: 1.5rem; background: #EEEEEE; font-size: 0.55rem;}
+			.bttom>a {background: #FF5152; color: #FFFFFF; font-size: 0.65rem;display: block; height: 1.8rem; line-height: 1.8rem;}
+		</style>
+	</head>
+
+	<body>
+		<ul class="mui-table-view">
+			<li class="mui-media">
+				<div class="mui-pull-left" style="margin-right: 0.5rem;">
+					<img src="image/li-img.jpg" class="mui-media-object" style="display: block;">
+				</div>
+
+				<div class="mui-media-body">
+					<h5 class="mui-ellipsis">信息化推进办公室张彦合同付款信123息化12346521321321789</h5>
+					<div class="mui-row">
+						<div class="mui-col-xs-5">
+							总需人数:1278
+						</div>
+						<div class="mui-col-xs-1">
+
+						</div>
+						<div class="mui-col-xs-5" style="text-align: right;">
+							<font color="#333333">剩余:</font>
+							<font color="#52A3FF">1278</font>人次
+						</div>
+						<div>
+							<font color="#FF5152">2元/人次</font>
+						</div>
+					</div>
+					<div class="num">
+						<button type="button" class="mui-btn">-</button>
+						<input type="text" name="" id="" value="1" />
+						<button type="button" class="mui-btn">+</button>
+						<button type="button" class="mui-btn" style="float: right;">X</button>
+					</div>
+				</div>
+			</li>
+			<li class="mui-media">
+				<div class="mui-pull-left" style="margin-right: 0.5rem;">
+					<img src="image/li-img.jpg" class="mui-media-object" style="display: block;">
+				</div>
+
+				<div class="mui-media-body">
+					<h5 class="mui-ellipsis">信息化推进办公室张彦合同付款信123息化12346521321321789</h5>
+					<div class="mui-row">
+						<div class="mui-col-xs-5">
+							总需人数:1278
+						</div>
+						<div class="mui-col-xs-1">
+
+						</div>
+						<div class="mui-col-xs-5" style="text-align: right;">
+							<font color="#333333">剩余:</font>
+							<font color="#52A3FF">1278</font>人次
+						</div>
+						<div>
+							<font color="#FF5152">2元/人次</font>
+						</div>
+					</div>
+					<div class="num">
+						<button type="button" class="mui-btn">-</button>
+						<input type="text" name="" id="" value="1" />
+						<button type="button" class="mui-btn">+</button>
+						<button type="button" class="mui-btn" style="float: right;">X</button>
+					</div>
+				</div>
+			</li>
+			<li class="mui-media">
+				<div class="mui-pull-left" style="margin-right: 0.5rem;">
+					<img src="image/li-img.jpg" class="mui-media-object" style="display: block;">
+				</div>
+
+				<div class="mui-media-body">
+					<h5 class="mui-ellipsis">信息化推进办公室张彦合同付款信123息化12346521321321789</h5>
+					<div class="mui-row">
+						<div class="mui-col-xs-5">
+							总需人数:1278
+						</div>
+						<div class="mui-col-xs-1">
+
+						</div>
+						<div class="mui-col-xs-5" style="text-align: right;">
+							<font color="#333333">剩余:</font>
+							<font color="#52A3FF">1278</font>人次
+						</div>
+						<div>
+							<font color="#FF5152">2元/人次</font>
+						</div>
+					</div>
+					<div class="num">
+						<button type="button" class="mui-btn">-</button>
+						<input type="text" name="" id="" value="1" />
+						<button type="button" class="mui-btn">+</button>
+						<button type="button" class="mui-btn" style="float: right;">X</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="bttom">
+			<div>共计<font color="#FF5152">5件</font>商品,总计:<font color="#FF5152" size="3">40元</font></div>
+			<a>结算</a>
+		</div>
+		<script id="cart" type="text/html">
+			{{#prop}}
+			<li class="mui-media">
+				<div class="mui-pull-left" style="margin-right: 0.5rem;">
+					<img src="{G_UPLOAD_PATH}/{{thumb}}" class="mui-media-object" style="display: block;">
+				</div>
+
+				<div class="mui-media-body">
+					<h5 class="mui-ellipsis">{{title}}</h5>
+					<div class="mui-row">
+						<div class="mui-col-xs-5">
+							总需人数:{{zongrenshu}}
+						</div>
+						<div class="mui-col-xs-1">
+
+						</div>
+						<div class="mui-col-xs-5" style="text-align: right;">
+							<font color="#333333">剩余:</font>
+							<font color="#52A3FF">{{shenyu}}</font>人次
+						</div>
+						<div>
+							<font color="#FF5152">{{yunjiage}}元/人次</font>
+						</div>
+					</div>
+					<div class="num">
+						<button type="button" class="mui-btn">-</button>
+						<input type="text" name="" id="" value="1" />
+						<button type="button" class="mui-btn">+</button>
+						<button type="button" class="mui-btn" style="float: right;">X</button>
+					</div>
+				</div>
+			</li>
+			{{/prop}}
+		</script>
+		<script src="{G_TEMPLATES_UPDATE}/js/mui.min.js"></script>
+		<script>
+				var _href = window.location.href;
+				var aR = _href.split('?=');
+				var sId = parseInt(aR[1]);
+				var a = $('.mui-table-view');
+			mui.ajax('{WEB_PATH}/mobile/ajaxupdateone/shoplistcartajax', {
+					dataType: 'json', //服务器返回json格式数据
+					type: 'post', //HTTP请求类型
+					async: false,
+					data: {
+						id:sId
+					},
+					success: function(data) {
+						console.log(data);
+
+						var loop = document.getElementById('cart').innerHTML;
+						var obj = {
+							prop: data.data
+						};
+						Mustache.parse(loop);
+						htmlAfterRendered = Mustache.render(loop, obj);
+						a.html(htmlAfterRendered);
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						console.log(type);
+					}
+				});
+		</script>
+	</body>
+
+</html>

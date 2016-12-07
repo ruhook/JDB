@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>账户明细</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			* { background: #FFFFFF;}
+			.mui-segmented-control { position: fixed;top: 0; height: auto; z-index: 9;}
+			.mui-segmented-control {
+			    font-size: 0.7rem;
+			    border: none; 
+			    border-radius: 0;
+				background-color: #FFFFFF;
+				
+			}
+			.mui-segmented-control .mui-control-item {
+			    line-height: 1.7rem;
+			    -webkit-transition: background-color .1s linear;
+			    transition: background-color .1s linear;
+			    text-align: center;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    color: #545454;
+			    border-color: #007aff;
+			    border-left: none;
+			    border-bottom:1px solid #F6F6F6 ;
+			}
+			.mui-segmented-control .mui-control-item.mui-active {
+			    color: #FF5152;
+			    border-bottom: 2px solid #FF5152;
+			    background-color: #FFFFFF;
+			}
+			p { margin-bottom: 0;}
+			.mui-control-item>p { font-size: 0.47rem; margin-top: -0.8rem;height: 1.2rem; margin-bottom: 0;}
+			.mui-table-view-chevron .mui-table-view-cell {padding-right: 0px;}
+			.mui-table-view-cell { font-size: 0.55rem; padding: 8px 0px 8px 15px;}
+			.mui-table-view-cell>p { font-size: 0.47rem;}
+			.sm-8 { display: inline-block; width: 70%;}
+			.sm-4 { display: inline-block; width: 27%; text-align: right; float: right; padding-right: 3%;}
+		</style>
+	</head>
+	<body>
+		
+		<div class="mui-content">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						消费明细
+						<p>(消费总金额:￥36)</p>
+					</a>
+					<a class="mui-control-item" href="#item2">
+						充值明细
+						<p>(充值总金额:￥36)</p>
+					</a>
+				</div>
+			<div style="padding-top: 2.1rem; background: #FFFFFF;">
+				<div id="item1" class="mui-control-content mui-active">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li><li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li><li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="sm-8">
+								通过微信web充值
+							</div>
+							<div class="sm-4">
+								+15.00元
+							</div>
+							<p class="sm-8">
+								2016-08-24  12:34:54
+							</p>
+							<p class="sm-4">
+								充值成功
+							</p>
+						</li>
+				</div>
+			</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+</html>

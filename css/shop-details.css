@@ -1,0 +1,78 @@
+.shop-name {
+	padding: 0.8rem 0.8rem;
+	background: #FFFFFF;
+}
+
+.shop-name>h5 {
+	font-size: 0.6rem;
+	color: #333333;
+}
+
+.mui-progressbar {
+	height: 0.3rem;
+	border-radius: 0.2rem;
+}
+
+.mui-progressbar span {
+	background: #FF5152;
+}
+
+.name-tit>span {
+	font-size: 0.6rem;
+	display: block;
+	float: left;
+	padding: 0rem 0 0.3rem;
+	color: #333333;
+}
+
+.name-tit>span:last-child {
+	float: right;
+}
+
+.name-num {
+	font-size: 0.55rem;
+}
+
+.mui-icon-arrowright {
+	float: right;
+	color: #AAAAAA;
+}
+
+.record {
+	padding: 0.5rem;
+	margin-top: 0.44rem;
+	background: #FFFFFF;
+	font-size: 0.6rem;
+}
+
+.record>a {
+	color: #333333;
+}
+
+.open-bottom {
+	position: fixed;
+	bottom: 0;
+	height: 1.92rem;
+	line-height: 1.92rem;
+	background: #FF5152;
+	width: 100%;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #FFFFFF;
+}
+
+.car {
+	width: 1.92rem;
+	float: right;
+	background: #C4C4C4;
+	height: 1.92rem;
+}
+
+.mui-table-view-chevron {
+	margin-top: 0.6rem;
+	font-size: 0.55rem;
+}
+
+.update {
+	color: #AAAAAA;
+}

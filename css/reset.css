@@ -1,0 +1,66 @@
+﻿@charset "utf-8";
+/* 禁用iPhone中Safari的字号自动调整 */
+html {  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+/* 去除iPhone中默认的input样式 */
+input{/* -webkit-appearance:none; */ resize: none;appearance:button;-moz-appearance:button; /* Firefox */-webkit-appearance:button; /* Safari 和 Chrome */}
+/* 取消链接高亮  */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+/*aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section,span,a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    font-family: Microsoft YaHei;}*/
+/* 设置HTML5元素为块 */
+article, aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section {
+    display: block;
+}
+/* 图片自适应 */
+img {width: 100%;height: auto;width:auto\9; /* ie8 */
+    -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+   display: block;}
+*:focus {outline:none;}
+/* 清零 */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{margin:0; padding:0; border:none;}
+body{font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self; color:#000000;
+    background-color: #FFFFFF;}
+em,i{font-style:normal;}
+strong{font-weight: normal;}
+.clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+.clearfix{zoom:1;}
+a{text-decoration:none; color:#000000; font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;}
+a:hover{ text-decoration:none;}
+ul,ol,li{list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;}
+fieldset,img{border: none;}
+table{border-collapse:collapse; border-spacing:0;}
+caption, th {text-align:left;}
+q:before,q:after {content:"";}
+input:password {ime-mode:disabled;}
+*{box-sizing:border-box;}
+.scope{min-width:320px; max-width:750px; margin: 0 auto;}
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 平板之类的宽度 1024 以下设备 */
+@media only screen and (min-device-width: 100px) and (max-device-width: 1024px) {
+	
+}
+/* PC客户端或大屏幕设备: 1028px 至更大 */
+@media only screen and (min-device-width: 1029px) {
+	
+}
+/*6+*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){ 
+	.
+}
+/*6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+	
+}
+/* 兼容iphone5 */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+	
+}
+/*4 4s*/
+@media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2){ 
+
+}

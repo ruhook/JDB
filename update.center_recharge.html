@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<title>充值</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/resizeRem.js"></script>
+		<style>
+			.radio { padding: 0.8rem 0.5rem;}
+			input[type=button]{
+			    width: 30%;
+			    float: left;
+			    margin-right: 5%;
+			}
+			input[type=button]:nth-child(4){
+			    margin-right: 0;
+			}
+			input[type=text]{
+			    width: 30%;
+			    height: auto;
+			    margin-bottom: 0px;
+			    padding: 3.5px 12px;
+			    line-height: 1.42;
+			    float: left;
+			}
+			input[type=submit] { width: 90%; margin:1.0rem 5%;}
+		</style>
+	</head>
+
+	<body>
+		<form action="" method="post">
+			<div class="radio">
+				<p>选择充值金额(元)</p>
+				<input type="button" name="" id="" value="10" />
+				<input type="button" name="" id="" value="20" />
+				<input type="button" name="" id="" value="30" />
+				<div style="height: 0.3rem; float: left; width: 100%;"></div>
+				<input type="button" name="" id="" value="100" />
+				<input type="button" name="" id="" value="200" />
+				<input type="text" name="" id="" value="" />
+				<div style="clear: both;"></div>
+			</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					账户明细
+				</li>
+				<div class="mui-input-row mui-checkbox mui-left">
+					<label style="width: 70%;">设置为默认收货地址</label>
+					<input name="checkbox" value="Item 1" type="checkbox">
+				</div>
+			</ul>
+			<input type="submit" value="确认充值"/>
+		</form>
+		
+		<script src="js/mui.min.js"></script>
+	</body>
+
+</html>
